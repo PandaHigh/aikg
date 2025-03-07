@@ -1,0 +1,27 @@
+[Unit]
+Description=AIKG Application Service
+After=network.target mysql.service
+Wants=mysql.service
+
+[Service]
+Type=forking
+User=aikg
+Group=aikg
+WorkingDirectory=/opt/aikg
+EnvironmentFile=/opt/aikg/deploy/env/.env
+
+ExecStart=/opt/aikg/deploy/scripts/start.sh
+ExecStop=/opt/aikg/deploy/scripts/stop.sh
+PIDFile=/opt/aikg/aikg.pid
+
+# 自动重启
+Restart=always
+RestartSec=10
+
+# 资源限制
+LimitNOFILE=65536
+TimeoutStartSec=180
+TimeoutStopSec=120
+
+[Install]
+WantedBy=multi-user.target 

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIKG - 领域知识AI订阅</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/aikg-logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="images/aikg-logo.svg" alt="AIKG Logo">
+                <span class="navbar-logo-text">AIKG</span>
+            </a>
+            <div class="navbar-links">
+                <a href="#" class="navbar-link active">首页</a>
+                <a href="#" class="navbar-link">特性</a>
+                <a href="#" class="navbar-link">关于</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 英雄区块 -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">领域知识AI订阅</h1>
+                <p class="hero-subtitle">利用先进的满血版DeepSeek大语言模型，为您定制和推送个性化的领域知识和前沿动态，让您随时掌握世界的脉搏</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="true">新增订阅</button>
+                <button class="nav-link" id="query-tab" data-bs-toggle="tab" data-bs-target="#query" type="button" role="tab" aria-controls="query" aria-selected="false">查询订阅</button>
+            </nav>
+
+            <div class="tab-content" id="nav-tabContent">
+                <!-- 新增订阅模块 -->
+                <div class="tab-pane fade show active" id="add" role="tabpanel" aria-labelledby="add-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">新增知识订阅</h2>
+                            
+                            <p class="text-muted mb-4">填写以下信息创建订阅</p>
+                            
+                            <form id="subscription-form">
+                                <div class="mb-4">
+                                    <label for="area" class="form-label">订阅领域</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="area" required placeholder="例如：大语言模型前沿进展">
+                                        <button class="btn btn-outline-secondary" type="button" id="ai-suggest-area">
+                                            <i class="bi bi-magic"></i> AI推荐
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="reader" class="form-label">目标读者</label>
+                                    <input type="text" class="form-control" id="reader" required placeholder="例如：程序员">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="readerEmail" class="form-label">接收邮箱</label>
+                                    <input type="email" class="form-control" id="readerEmail" required placeholder="您的邮箱地址">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="scheduleCron" class="form-label">定时发送时间</label>
+                                    <div class="input-group">
+                                        <input type="time" class="form-control" id="scheduleCron" value="08:00" placeholder="选择每日发送时间">
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <button type="submit" class="btn btn-primary">提交订阅</button>
+                                    <button type="button" id="test-generate-btn" class="btn btn-secondary">生成试试</button>
+                                </div>
+                                <div class="form-text mt-3">
+                                    <i class="bi bi-info-circle"></i> 生成试试-尝试生成一篇文章发送至您的邮箱
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 查询订阅模块 -->
+                <div class="tab-pane fade" id="query" role="tabpanel" aria-labelledby="query-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">查询订阅内容</h2>
+                            <form id="query-form" class="mb-4">
+                                <div class="mb-4">
+                                    <label for="queryEmail" class="form-label">邮箱地址</label>
+                                    <input type="email" class="form-control" id="queryEmail" required placeholder="输入您的订阅邮箱">
+                                </div>
+                                <button type="submit" class="btn btn-primary">查询</button>
+                            </form>
+
+                            <div id="subscription-results" class="d-none">
+                                <h3 class="mb-4">您的订阅列表</h3>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>领域</th>
+                                                <th>目标读者</th>
+                                                <th>状态</th>
+                                                <th>发送时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="subscription-list">
+                                            <!-- 动态插入查询结果 -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="no-results" class="alert alert-info d-none">
+                                未找到任何订阅信息
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 功能特性介绍 -->
+            <section class="mt-5">
+                <h2 class="text-center mb-5">领域知识AI订阅的特性</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5">个性化内容定制</h3>
+                                <p>基于您的兴趣领域和个人偏好，我们的AI系统为您定制高质量的知识内容，确保信息的相关性和实用性。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5">自动内容生成</h3>
+                                <p>利用先进的大语言模型技术，自动生成高质量的知识综述和前沿动态报告，省去手动收集整理的繁琐。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title h5">定期邮件推送</h3>
+                                <p>系统会定期将生成的内容通过邮件推送给您，让您不错过任何重要的行业动态和技术突破。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="images/aikg-logo.svg" alt="AIKG Logo">
+                <span class="footer-logo-text">AIKG</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">首页</a>
+                <a href="#" class="footer-link">关于</a>
+                <a href="#" class="footer-link">隐私政策</a>
+                <a href="#" class="footer-link">服务条款</a>
+            </div>
+            <p class="footer-copyright">© 2025 AIKG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">操作结果</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载动画 -->
+    <div id="loading-spinner" class="d-none">
+        <div class="spinner-container">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>正在处理您的请求，大模型调用需要时间，请稍候...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

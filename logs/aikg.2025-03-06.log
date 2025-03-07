@@ -1,0 +1,79 @@
+2025-03-06 00:59:58.910 [scheduled-task-2] INFO  com.know.aikg.service.GenerateService - 开始刷新所有订阅定时任务...
+2025-03-06 00:59:58.926 [scheduled-task-2] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-06 00:59:58.964 [scheduled-task-2] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-06 00:59:58.964 [scheduled-task-2] INFO  com.know.aikg.service.GenerateService - 已取消订阅 ID: 5 的定时任务
+2025-03-06 00:59:58.965 [scheduled-task-2] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 5 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-06 00:59:58.966 [scheduled-task-2] INFO  com.know.aikg.service.GenerateService - 已取消订阅 ID: 6 的定时任务
+2025-03-06 00:59:58.966 [scheduled-task-2] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 6 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-06 00:59:58.966 [scheduled-task-2] INFO  com.know.aikg.service.GenerateService - 成功刷新 2 个订阅定时任务
+2025-03-06 07:59:57.887 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [任务开始] ID: task-1741219197882-1, 时间: 2025-03-06 07:59:57, 订阅ID: 1, 领域: 大语言模型前沿, 读者: 初级程序员
+2025-03-06 07:59:57.890 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741219197890, 领域: 大语言模型前沿, 读者: 初级程序员, 邮箱: xinlongzhan@webank.com
+2025-03-06 07:59:57.895 [scheduled-task-5] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-06 07:59:57.895 [scheduled-task-5] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 293 字符, 用户提示词长度: 145 字符
+2025-03-06 08:00:17.924 [scheduled-task-5] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 20029 毫秒
+2025-03-06 08:00:17.924 [scheduled-task-5] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 497 字符
+2025-03-06 08:00:17.925 [scheduled-task-5] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741219197890, 耗时: 20034ms, 生成标题数: 20
+2025-03-06 08:00:17.925 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741219197890, 选中标题: 从理论到实践：用Colab快速体验大语言模型的魅力
+2025-03-06 08:00:17.926 [scheduled-task-5] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-06 08:00:17.926 [scheduled-task-5] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 339 字符, 用户提示词长度: 186 字符
+2025-03-06 08:00:59.250 [scheduled-task-5] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 41324 毫秒
+2025-03-06 08:00:59.251 [scheduled-task-5] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 1317 字符
+2025-03-06 08:00:59.251 [scheduled-task-5] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 1317 字符
+2025-03-06 08:00:59.252 [scheduled-task-5] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 815 字符
+2025-03-06 08:00:59.252 [scheduled-task-5] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741219197890, 耗时: 41327ms, 长度: 815 字符
+2025-03-06 08:00:59.253 [scheduled-task-5] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: AIKG-从理论到实践：用Colab快速体验大语言模型的魅力
+2025-03-06 08:00:59.253 [scheduled-task-5] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 815 字符
+2025-03-06 08:01:05.075 [scheduled-task-5] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-06 08:01:05.076 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741219197890, 总耗时: 67184ms, 邮件发送耗时: 5823ms, 主题: AIKG-从理论到实践：用Colab快速体验大语言模型的魅力, 接收者: xinlongzhan@webank.com
+2025-03-06 08:01:05.077 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741219197890, 标题生成: 20034ms, 内容生成: 41327ms, 邮件发送: 5823ms, 总计: 67184ms
+2025-03-06 08:01:05.077 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741219197882-1, 订阅ID: 1, 领域: 大语言模型前沿, 读者: 初级程序员
+2025-03-06 08:01:05.077 [scheduled-task-5] INFO  com.know.aikg.service.GenerateService - [任务完成] ID: task-1741219197882-1, 耗时: 67秒
+2025-03-06 17:49:22.164 [AIKGHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Retrograde clock change detected (housekeeper delta=29s860ms), soft-evicting connections from pool.
+2025-03-06 18:19:57.473 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [任务开始] ID: task-1741256397470-5, 时间: 2025-03-06 18:19:57, 订阅ID: 5, 领域: 新能源汽车, 读者: 希望购买第一辆车的新手司机
+2025-03-06 18:19:57.476 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741256397476, 领域: 新能源汽车, 读者: 希望购买第一辆车的新手司机, 邮箱: xinlongzhan@webank.com
+2025-03-06 18:19:57.480 [scheduled-task-6] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-06 18:19:57.480 [scheduled-task-6] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 293 字符, 用户提示词长度: 151 字符
+2025-03-06 18:20:15.054 [scheduled-task-6] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 17574 毫秒
+2025-03-06 18:20:15.054 [scheduled-task-6] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 446 字符
+2025-03-06 18:20:15.054 [scheduled-task-6] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741256397476, 耗时: 17577ms, 生成标题数: 20
+2025-03-06 18:20:15.054 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741256397476, 选中标题: 5个关键指标，帮你快速判断新能源汽车的性能
+2025-03-06 18:20:15.055 [scheduled-task-6] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-06 18:20:15.055 [scheduled-task-6] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 338 字符, 用户提示词长度: 188 字符
+2025-03-06 18:20:52.743 [scheduled-task-6] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 37688 毫秒
+2025-03-06 18:20:52.744 [scheduled-task-6] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 1104 字符
+2025-03-06 18:20:52.744 [scheduled-task-6] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 1104 字符
+2025-03-06 18:20:52.745 [scheduled-task-6] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 1089 字符
+2025-03-06 18:20:52.745 [scheduled-task-6] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741256397476, 耗时: 37691ms, 长度: 1089 字符
+2025-03-06 18:20:52.745 [scheduled-task-6] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: AIKG-5个关键指标，帮你快速判断新能源汽车的性能
+2025-03-06 18:20:52.745 [scheduled-task-6] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 1089 字符
+2025-03-06 18:20:56.615 [scheduled-task-6] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-06 18:20:56.616 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741256397476, 总耗时: 59139ms, 邮件发送耗时: 3870ms, 主题: AIKG-5个关键指标，帮你快速判断新能源汽车的性能, 接收者: xinlongzhan@webank.com
+2025-03-06 18:20:56.616 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741256397476, 标题生成: 17577ms, 内容生成: 37691ms, 邮件发送: 3870ms, 总计: 59139ms
+2025-03-06 18:20:56.616 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741256397470-5, 订阅ID: 5, 领域: 新能源汽车, 读者: 希望购买第一辆车的新手司机
+2025-03-06 18:20:56.616 [scheduled-task-6] INFO  com.know.aikg.service.GenerateService - [任务完成] ID: task-1741256397470-5, 耗时: 59秒
+2025-03-06 19:59:57.323 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [任务开始] ID: task-1741262397316-6, 时间: 2025-03-06 19:59:57, 订阅ID: 6, 领域: 大模型在代码中的应用, 读者: java程序员
+2025-03-06 19:59:57.327 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741262397327, 领域: 大模型在代码中的应用, 读者: java程序员, 邮箱: xinlongzhan@webank.com
+2025-03-06 19:59:57.337 [scheduled-task-7] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-06 19:59:57.337 [scheduled-task-7] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 293 字符, 用户提示词长度: 150 字符
+2025-03-06 20:00:24.761 [scheduled-task-7] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 27424 毫秒
+2025-03-06 20:00:24.761 [scheduled-task-7] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 488 字符
+2025-03-06 20:00:24.763 [scheduled-task-7] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741262397327, 耗时: 27432ms, 生成标题数: 20
+2025-03-06 20:00:24.763 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741262397327, 选中标题: Java开发者的新武器：大模型辅助编程实战解析
+2025-03-06 20:00:24.763 [scheduled-task-7] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-06 20:00:24.764 [scheduled-task-7] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 337 字符, 用户提示词长度: 189 字符
+2025-03-06 20:01:02.608 [scheduled-task-7] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 37844 毫秒
+2025-03-06 20:01:02.608 [scheduled-task-7] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 980 字符
+2025-03-06 20:01:02.608 [scheduled-task-7] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 980 字符
+2025-03-06 20:01:02.609 [scheduled-task-7] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 968 字符
+2025-03-06 20:01:02.609 [scheduled-task-7] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741262397327, 耗时: 37846ms, 长度: 968 字符
+2025-03-06 20:01:02.610 [scheduled-task-7] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: AIKG-Java开发者的新武器：大模型辅助编程实战解析
+2025-03-06 20:01:02.610 [scheduled-task-7] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 968 字符
+2025-03-06 20:01:07.680 [scheduled-task-7] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-06 20:01:07.682 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741262397327, 总耗时: 70353ms, 邮件发送耗时: 5072ms, 主题: AIKG-Java开发者的新武器：大模型辅助编程实战解析, 接收者: xinlongzhan@webank.com
+2025-03-06 20:01:07.682 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741262397327, 标题生成: 27432ms, 内容生成: 37846ms, 邮件发送: 5072ms, 总计: 70353ms
+2025-03-06 20:01:07.683 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741262397316-6, 订阅ID: 6, 领域: 大模型在代码中的应用, 读者: java程序员
+2025-03-06 20:01:07.683 [scheduled-task-7] INFO  com.know.aikg.service.GenerateService - [任务完成] ID: task-1741262397316-6, 耗时: 70秒
+2025-03-06 22:48:30.629 [SpringApplicationShutdownHook] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-06 22:48:30.633 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 22:48:30.649 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-06 22:48:30.657 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.

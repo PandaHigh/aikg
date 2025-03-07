@@ -1,0 +1,113 @@
+2025-03-04 07:59:57.934 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [任务开始] ID: task-1741046397931, 时间: 2025-03-04 07:59:57, 任务: 生成并发送订阅邮件
+2025-03-04 07:59:57.944 [scheduling-1] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-04 07:59:58.109 [scheduling-1] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 5 个有效订阅
+2025-03-04 07:59:58.109 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [任务进度] ID: task-1741046397931, 找到 5 个活跃订阅
+2025-03-04 07:59:58.109 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理订阅] ID: task-1741046397931, 订阅ID: 1, 领域: 大语言模型前沿进展, 读者: 初级程序员
+2025-03-04 07:59:58.109 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741046398109, 领域: 大语言模型前沿进展, 读者: 初级程序员, 邮箱: xinlongzhan@webank.com
+2025-03-04 07:59:58.110 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 07:59:58.110 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 282 字符, 用户提示词长度: 121 字符
+2025-03-04 08:00:52.643 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 54533 毫秒
+2025-03-04 08:00:52.644 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 585 字符
+2025-03-04 08:00:52.645 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741046398109, 耗时: 54536ms, 生成标题数: 20
+2025-03-04 08:00:52.645 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741046398109, 选中标题: 当Transformer遇见你的IDE：提升日常编码效率的七个场景
+2025-03-04 08:00:52.646 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:00:52.646 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 337 字符, 用户提示词长度: 193 字符
+2025-03-04 08:01:52.018 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 59371 毫秒
+2025-03-04 08:01:52.019 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 1251 字符
+2025-03-04 08:01:52.019 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 1251 字符
+2025-03-04 08:01:52.020 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 1251 字符
+2025-03-04 08:01:52.020 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741046398109, 耗时: 59375ms, 长度: 1251 字符
+2025-03-04 08:01:52.020 [scheduling-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: 每日AIKG-当Transformer遇见你的IDE：提升日常编码效率的七个场景
+2025-03-04 08:01:52.020 [scheduling-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 1251 字符
+2025-03-04 08:01:53.690 [scheduling-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-04 08:01:53.691 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741046398109, 总耗时: 115581ms, 邮件发送耗时: 1671ms, 主题: 每日AIKG-当Transformer遇见你的IDE：提升日常编码效率的七个场景, 接收者: xinlongzhan@webank.com
+2025-03-04 08:01:53.692 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741046398109, 标题生成: 54536ms, 内容生成: 59375ms, 邮件发送: 1671ms, 总计: 115581ms
+2025-03-04 08:01:53.692 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741046397931, 订阅ID: 1, 进度: 1/5
+2025-03-04 08:01:53.692 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理订阅] ID: task-1741046397931, 订阅ID: 2, 领域: 母婴知识, 读者: 孕妇
+2025-03-04 08:01:53.693 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741046513693, 领域: 母婴知识, 读者: 孕妇, 邮箱: xinlongzhan@webank.com
+2025-03-04 08:01:53.693 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:01:53.693 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 282 字符, 用户提示词长度: 113 字符
+2025-03-04 08:03:03.011 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 69318 毫秒
+2025-03-04 08:03:03.013 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 380 字符
+2025-03-04 08:03:03.014 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741046513693, 耗时: 69321ms, 生成标题数: 20
+2025-03-04 08:03:03.014 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741046513693, 选中标题: 胎动语言解密：宝宝在肚里到底想说什么
+2025-03-04 08:03:03.015 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:03:03.015 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 334 字符, 用户提示词长度: 170 字符
+2025-03-04 08:03:58.166 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 55151 毫秒
+2025-03-04 08:03:58.167 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 995 字符
+2025-03-04 08:03:58.168 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 995 字符
+2025-03-04 08:03:58.169 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 986 字符
+2025-03-04 08:03:58.169 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741046513693, 耗时: 55155ms, 长度: 986 字符
+2025-03-04 08:03:58.169 [scheduling-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: 每日AIKG-胎动语言解密：宝宝在肚里到底想说什么
+2025-03-04 08:03:58.170 [scheduling-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 986 字符
+2025-03-04 08:03:58.982 [scheduling-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-04 08:03:58.983 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741046513693, 总耗时: 125290ms, 邮件发送耗时: 814ms, 主题: 每日AIKG-胎动语言解密：宝宝在肚里到底想说什么, 接收者: xinlongzhan@webank.com
+2025-03-04 08:03:58.983 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741046513693, 标题生成: 69321ms, 内容生成: 55155ms, 邮件发送: 814ms, 总计: 125290ms
+2025-03-04 08:03:58.983 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741046397931, 订阅ID: 2, 进度: 2/5
+2025-03-04 08:03:58.983 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理订阅] ID: task-1741046397931, 订阅ID: 5, 领域: 新能源汽车, 读者: 希望购买第一辆车的新手司机
+2025-03-04 08:03:58.984 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741046638984, 领域: 新能源汽车, 读者: 希望购买第一辆车的新手司机, 邮箱: xinlongzhan@webank.com
+2025-03-04 08:03:58.984 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:03:58.984 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 282 字符, 用户提示词长度: 125 字符
+2025-03-04 08:04:46.684 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 47699 毫秒
+2025-03-04 08:04:46.685 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 516 字符
+2025-03-04 08:04:46.686 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741046638984, 耗时: 47702ms, 生成标题数: 20
+2025-03-04 08:04:46.686 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741046638984, 选中标题: 充电速度VS续航里程：新手最容易陷入的认知误区
+2025-03-04 08:04:46.686 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:04:46.686 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 338 字符, 用户提示词长度: 187 字符
+2025-03-04 08:05:34.133 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 47447 毫秒
+2025-03-04 08:05:34.134 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 955 字符
+2025-03-04 08:05:34.134 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 955 字符
+2025-03-04 08:05:34.135 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 955 字符
+2025-03-04 08:05:34.136 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741046638984, 耗时: 47450ms, 长度: 955 字符
+2025-03-04 08:05:34.136 [scheduling-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: 每日AIKG-充电速度VS续航里程：新手最容易陷入的认知误区
+2025-03-04 08:05:34.136 [scheduling-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 955 字符
+2025-03-04 08:05:37.830 [scheduling-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-04 08:05:37.830 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741046638984, 总耗时: 98846ms, 邮件发送耗时: 3694ms, 主题: 每日AIKG-充电速度VS续航里程：新手最容易陷入的认知误区, 接收者: xinlongzhan@webank.com
+2025-03-04 08:05:37.830 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741046638984, 标题生成: 47702ms, 内容生成: 47450ms, 邮件发送: 3694ms, 总计: 98846ms
+2025-03-04 08:05:37.831 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741046397931, 订阅ID: 5, 进度: 3/5
+2025-03-04 08:05:37.831 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理订阅] ID: task-1741046397931, 订阅ID: 6, 领域: 大模型在代码中的应用, 读者: java程序员
+2025-03-04 08:05:37.831 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741046737831, 领域: 大模型在代码中的应用, 读者: java程序员, 邮箱: xinlongzhan@webank.com
+2025-03-04 08:05:37.831 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:05:37.831 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 282 字符, 用户提示词长度: 124 字符
+2025-03-04 08:06:28.540 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 50709 毫秒
+2025-03-04 08:06:28.541 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 564 字符
+2025-03-04 08:06:28.542 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741046737831, 耗时: 50711ms, 生成标题数: 20
+2025-03-04 08:06:28.542 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741046737831, 选中标题: Java程序员必知：用AI工具自动生成单元测试的5种姿势
+2025-03-04 08:06:28.542 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:06:28.542 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 339 字符, 用户提示词长度: 191 字符
+2025-03-04 08:07:34.136 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 65594 毫秒
+2025-03-04 08:07:34.137 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 1218 字符
+2025-03-04 08:07:34.137 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 1218 字符
+2025-03-04 08:07:34.138 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 1188 字符
+2025-03-04 08:07:34.138 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741046737831, 耗时: 65596ms, 长度: 1188 字符
+2025-03-04 08:07:34.138 [scheduling-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: 每日AIKG-Java程序员必知：用AI工具自动生成单元测试的5种姿势
+2025-03-04 08:07:34.138 [scheduling-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 1188 字符
+2025-03-04 08:07:37.870 [scheduling-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-04 08:07:37.871 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741046737831, 总耗时: 120039ms, 邮件发送耗时: 3733ms, 主题: 每日AIKG-Java程序员必知：用AI工具自动生成单元测试的5种姿势, 接收者: xinlongzhan@webank.com
+2025-03-04 08:07:37.871 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741046737831, 标题生成: 50711ms, 内容生成: 65596ms, 邮件发送: 3733ms, 总计: 120039ms
+2025-03-04 08:07:37.871 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741046397931, 订阅ID: 6, 进度: 4/5
+2025-03-04 08:07:37.871 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理订阅] ID: task-1741046397931, 订阅ID: 7, 领域: 小米汽车, 读者: 汽车爱好者
+2025-03-04 08:07:37.871 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741046857871, 领域: 小米汽车, 读者: 汽车爱好者, 邮箱: xinlongzhan@webank.com
+2025-03-04 08:07:37.872 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:07:37.872 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 282 字符, 用户提示词长度: 116 字符
+2025-03-04 08:08:15.732 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 37859 毫秒
+2025-03-04 08:08:15.733 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 538 字符
+2025-03-04 08:08:15.733 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741046857871, 耗时: 37861ms, 生成标题数: 20
+2025-03-04 08:08:15.733 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741046857871, 选中标题: 驾驶舱里的MIUI：这套人车交互系统凭什么让人上瘾？
+2025-03-04 08:08:15.734 [scheduling-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-04 08:08:15.734 [scheduling-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 334 字符, 用户提示词长度: 181 字符
+2025-03-04 08:09:20.052 [scheduling-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 64318 毫秒
+2025-03-04 08:09:20.053 [scheduling-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 1296 字符
+2025-03-04 08:09:20.053 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 1296 字符
+2025-03-04 08:09:20.054 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 1276 字符
+2025-03-04 08:09:20.054 [scheduling-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741046857871, 耗时: 64321ms, 长度: 1276 字符
+2025-03-04 08:09:20.054 [scheduling-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: 每日AIKG-驾驶舱里的MIUI：这套人车交互系统凭什么让人上瘾？
+2025-03-04 08:09:20.054 [scheduling-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 1276 字符
+2025-03-04 08:09:21.075 [scheduling-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-04 08:09:21.076 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741046857871, 总耗时: 103204ms, 邮件发送耗时: 1022ms, 主题: 每日AIKG-驾驶舱里的MIUI：这套人车交互系统凭什么让人上瘾？, 接收者: xinlongzhan@webank.com
+2025-03-04 08:09:21.076 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741046857871, 标题生成: 37861ms, 内容生成: 64321ms, 邮件发送: 1022ms, 总计: 103204ms
+2025-03-04 08:09:21.076 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741046397931, 订阅ID: 7, 进度: 5/5
+2025-03-04 08:09:21.076 [scheduling-1] INFO  com.know.aikg.service.GenerateService - [任务完成] ID: task-1741046397931, 耗时: 563秒, 成功: 5, 失败: 0, 总数: 5
+2025-03-04 09:48:10.966 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-04 09:48:10.974 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-04 09:48:10.977 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.

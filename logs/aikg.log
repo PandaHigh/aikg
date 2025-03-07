@@ -1,0 +1,429 @@
+2025-03-07 10:43:06.077 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 10:43:06.101 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27020 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 10:43:06.101 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 10:43:06.101 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 10:43:06.682 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 10:43:06.753 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-03-07 10:43:07.196 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-07 10:43:07.202 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:43:07.205 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 10:43:07.206 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 10:43:07.247 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 10:43:07.248 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1032 ms
+2025-03-07 10:43:07.417 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 10:43:07.449 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 10:43:07.467 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 10:43:07.574 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 10:43:07.588 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 10:43:07.745 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@77db231c
+2025-03-07 10:43:07.746 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 10:43:07.785 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 10:43:07.785 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 10:43:08.200 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 10:43:08.240 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:43:08.663 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 10:43:08.663 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 10:43:08.745 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 10:43:08.749 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 5 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 10:43:08.749 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 6 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 10:43:08.749 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 10:43:08.801 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 3d964213-65fd-4e7e-948d-5ce28b113806
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 10:43:08.849 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 10:43:08.955 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 10:43:08.983 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f8614ce, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11261fc9, org.springframework.security.web.context.SecurityContextHolderFilter@1847da64, org.springframework.security.web.header.HeaderWriterFilter@579b1d86, org.springframework.web.filter.CorsFilter@273cb729, org.springframework.security.web.authentication.logout.LogoutFilter@6e681c3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@456d3914, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61236349, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76603c44, org.springframework.security.web.access.ExceptionTranslationFilter@412b90cc, org.springframework.security.web.access.intercept.AuthorizationFilter@16ea56ab]
+2025-03-07 10:43:09.212 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:43:09.219 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-03-07 10:43:09.238 [main] INFO  com.know.aikg.AikgApplication - Started AikgApplication in 3.391 seconds (process running for 3.678)
+2025-03-07 10:43:09.265 [main] INFO  com.know.aikg.AikgApplication - AIKG 应用程序已成功启动
+2025-03-07 10:43:20.095 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 10:43:20.095 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-07 10:43:20.097 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-07 10:45:11.594 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 10:45:11.613 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27099 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 10:45:11.613 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 10:45:11.614 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 10:45:12.224 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 10:45:12.293 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2025-03-07 10:45:12.733 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-07 10:45:12.738 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:45:12.739 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 10:45:12.740 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 10:45:12.776 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 10:45:12.776 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1041 ms
+2025-03-07 10:45:12.944 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 10:45:12.976 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 10:45:12.994 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 10:45:13.102 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 10:45:13.116 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 10:45:13.209 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ee1ddcf
+2025-03-07 10:45:13.210 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 10:45:13.234 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 10:45:13.235 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 10:45:13.632 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 10:45:13.661 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:45:14.077 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 10:45:14.078 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 10:45:14.163 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 10:45:14.166 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 5 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 10:45:14.167 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 6 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 10:45:14.167 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 10:45:14.215 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 95b92818-f8e3-44fd-a5e9-a60abd1df570
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 10:45:14.266 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 10:45:14.371 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 10:45:14.402 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@273cb729, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@76603c44, org.springframework.security.web.context.SecurityContextHolderFilter@f4a21cb, org.springframework.security.web.header.HeaderWriterFilter@6e18bc2f, org.springframework.web.filter.CorsFilter@398f6622, org.springframework.security.web.authentication.logout.LogoutFilter@66008321, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@783a2fec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b989889, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18f6ee8d, org.springframework.security.web.access.ExceptionTranslationFilter@4b75d640, org.springframework.security.web.access.intercept.AuthorizationFilter@461e0652]
+2025-03-07 10:45:14.635 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:45:14.639 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-03-07 10:45:40.896 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 10:45:40.915 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27139 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 10:45:40.915 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 10:45:40.916 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 10:45:41.450 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 10:45:41.519 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2025-03-07 10:45:41.890 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-07 10:45:41.895 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:45:41.896 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 10:45:41.897 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 10:45:41.931 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 10:45:41.932 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 909 ms
+2025-03-07 10:45:42.094 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 10:45:42.121 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 10:45:42.141 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 10:45:42.232 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 10:45:42.244 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 10:45:42.328 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@30437e9c
+2025-03-07 10:45:42.332 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 10:45:42.358 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 10:45:42.358 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 10:45:42.718 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 10:45:42.748 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:45:43.154 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 10:45:43.154 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 10:45:43.234 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 10:45:43.236 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 5 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 10:45:43.237 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 6 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 10:45:43.237 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 10:45:43.295 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f1b5aee9-6479-4cc6-be69-54cdaf4fdd23
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 10:45:43.345 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 10:45:43.459 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 10:45:43.486 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6fb8cfa7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4015c65b, org.springframework.security.web.context.SecurityContextHolderFilter@4daa53e0, org.springframework.security.web.header.HeaderWriterFilter@5967492a, org.springframework.web.filter.CorsFilter@16486ab3, org.springframework.security.web.authentication.logout.LogoutFilter@4eb34397, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@271df4c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a9e88f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b13e4fb, org.springframework.security.web.access.ExceptionTranslationFilter@5d28ac23, org.springframework.security.web.access.intercept.AuthorizationFilter@398f6622]
+2025-03-07 10:45:43.712 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:45:43.718 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-03-07 10:45:43.735 [main] INFO  com.know.aikg.AikgApplication - Started AikgApplication in 3.044 seconds (process running for 3.209)
+2025-03-07 10:45:43.760 [main] INFO  com.know.aikg.AikgApplication - AIKG 应用程序已成功启动
+2025-03-07 10:45:47.315 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 10:45:47.315 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-07 10:45:47.317 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-07 10:46:14.651 [main] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-07 10:46:14.654 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:46:14.670 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-07 10:46:14.713 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.
+2025-03-07 10:46:15.533 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 10:46:15.549 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27163 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 10:46:15.549 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 10:46:15.549 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 10:46:16.067 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 10:46:16.131 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-03-07 10:46:16.524 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-03-07 10:46:16.529 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:46:16.530 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 10:46:16.530 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 10:46:16.561 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 10:46:16.561 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 916 ms
+2025-03-07 10:46:16.713 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 10:46:16.738 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 10:46:16.754 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 10:46:16.869 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 10:46:16.882 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 10:46:16.960 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b630d4b
+2025-03-07 10:46:16.961 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 10:46:16.987 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 10:46:16.987 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 10:46:17.357 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 10:46:17.383 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:46:17.776 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 10:46:17.776 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 10:46:17.855 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 10:46:17.857 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 5 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 10:46:17.858 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 6 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 10:46:17.858 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 10:46:17.901 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f7246112-0424-4210-b3ab-319bb218efc2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 10:46:17.943 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 10:46:18.048 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 10:46:18.072 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cb6fac3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9fe1e14, org.springframework.security.web.context.SecurityContextHolderFilter@86e7c7a, org.springframework.security.web.header.HeaderWriterFilter@783a2fec, org.springframework.web.filter.CorsFilter@d4e17ec, org.springframework.security.web.authentication.logout.LogoutFilter@7906de2f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@591bff1d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54d3b4fe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41d34a11, org.springframework.security.web.access.ExceptionTranslationFilter@142f0ac1, org.springframework.security.web.access.intercept.AuthorizationFilter@4015c65b]
+2025-03-07 10:46:18.303 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-07 10:46:18.307 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-03-07 10:46:19.055 [SpringApplicationShutdownHook] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-07 10:46:19.057 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:46:19.068 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-07 10:46:19.077 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.
+2025-03-07 10:47:18.316 [main] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-07 10:47:18.320 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:47:18.334 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-07 10:47:18.350 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.
+2025-03-07 10:47:18.381 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-07 10:47:18.393 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-03-07 10:47:34.025 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 10:47:34.044 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27221 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 10:47:34.045 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 10:47:34.045 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 10:47:34.595 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 10:47:34.666 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface.
+2025-03-07 10:47:35.038 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 80 (http)
+2025-03-07 10:47:35.043 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2025-03-07 10:47:35.045 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 10:47:35.045 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 10:47:35.079 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 10:47:35.080 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 931 ms
+2025-03-07 10:47:35.240 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 10:47:35.267 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 10:47:35.286 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 10:47:35.376 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 10:47:35.389 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 10:47:35.470 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@44da745f
+2025-03-07 10:47:35.471 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 10:47:35.498 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 10:47:35.499 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 10:47:35.860 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 10:47:35.887 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:47:36.294 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 10:47:36.294 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 10:47:36.374 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 10:47:36.377 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 5 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 10:47:36.377 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: 6 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 10:47:36.377 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 10:47:36.425 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5fe45a1c-98e2-4c8a-9c57-7c56809198f1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 10:47:36.475 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 10:47:36.584 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 10:47:36.614 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76603c44, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@398f6622, org.springframework.security.web.context.SecurityContextHolderFilter@635f4be1, org.springframework.security.web.header.HeaderWriterFilter@28d48616, org.springframework.web.filter.CorsFilter@18f6ee8d, org.springframework.security.web.authentication.logout.LogoutFilter@c4fac3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61236349, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42748f59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a318745, org.springframework.security.web.access.ExceptionTranslationFilter@4e9b66ab, org.springframework.security.web.access.intercept.AuthorizationFilter@3b9d5218]
+2025-03-07 10:47:36.851 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2025-03-07 10:47:36.857 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 80 (http) with context path ''
+2025-03-07 10:47:36.874 [main] INFO  com.know.aikg.AikgApplication - Started AikgApplication in 3.053 seconds (process running for 3.217)
+2025-03-07 10:47:36.895 [main] INFO  com.know.aikg.AikgApplication - AIKG 应用程序已成功启动
+2025-03-07 10:47:42.177 [http-nio-80-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 10:47:42.178 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-07 10:47:42.180 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-07 10:48:02.822 [SpringApplicationShutdownHook] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-07 10:48:02.828 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:48:02.845 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-07 10:48:02.859 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.
+2025-03-07 10:49:36.444 [http-nio-80-exec-8] INFO  com.know.aikg.controller.SubscriptionController - 查询邮箱为 xinlongzhan@webank.com 的订阅列表
+2025-03-07 10:49:36.445 [http-nio-80-exec-8] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询邮箱为 xinlongzhan@webank.com 的订阅
+2025-03-07 10:49:36.456 [http-nio-80-exec-8] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 3 个订阅
+2025-03-07 11:11:38.887 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 11:11:38.909 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27836 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 11:11:38.909 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 11:11:38.910 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 11:11:39.491 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 11:11:39.560 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2025-03-07 11:11:39.951 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 80 (http)
+2025-03-07 11:11:39.957 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2025-03-07 11:11:39.959 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 11:11:39.959 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 11:11:39.998 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 11:11:39.998 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 979 ms
+2025-03-07 11:11:40.157 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 11:11:40.186 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 11:11:40.203 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 11:11:40.307 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 11:11:40.321 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 11:11:40.466 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@70aa03c0
+2025-03-07 11:11:40.468 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 11:11:40.508 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 11:11:40.508 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 11:11:40.891 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 11:11:40.945 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 11:11:41.354 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 11:11:41.354 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 11:11:41.439 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 11:11:41.442 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: f07597e8faff11ef88541093b0b78881 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 11:11:41.442 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: f07599b4faff11ef88541093b0b78881 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 11:11:41.442 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 11:11:41.493 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 23f37101-6918-4857-8141-aec8ffed8a10
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 11:11:41.539 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 11:11:41.636 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 11:11:41.667 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11261fc9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@273cb729, org.springframework.security.web.context.SecurityContextHolderFilter@5967492a, org.springframework.security.web.header.HeaderWriterFilter@5d28ac23, org.springframework.web.filter.CorsFilter@76603c44, org.springframework.security.web.authentication.logout.LogoutFilter@5519ee60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26a0068a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4daa53e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@398f6622, org.springframework.security.web.access.ExceptionTranslationFilter@6232cde5, org.springframework.security.web.access.intercept.AuthorizationFilter@135fb22d]
+2025-03-07 11:11:41.901 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2025-03-07 11:11:41.904 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-03-07 11:11:57.178 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-07 11:11:57.197 [main] INFO  com.know.aikg.AikgApplication - Starting AikgApplication using Java 17.0.7 with PID 27866 (/Users/zhanxinlong/code/aikg/target/classes started by zhanxinlong in /Users/zhanxinlong/code/aikg)
+2025-03-07 11:11:57.198 [main] DEBUG com.know.aikg.AikgApplication - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-07 11:11:57.198 [main] INFO  com.know.aikg.AikgApplication - The following 1 profile is active: "dev"
+2025-03-07 11:11:57.737 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 11:11:57.811 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interface.
+2025-03-07 11:11:58.217 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 80 (http)
+2025-03-07 11:11:58.223 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2025-03-07 11:11:58.224 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-07 11:11:58.224 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-07 11:11:58.260 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-07 11:11:58.260 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 952 ms
+2025-03-07 11:11:58.438 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 11:11:58.462 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-07 11:11:58.477 [main] INFO  o.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-07 11:11:58.574 [main] INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 11:11:58.586 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Starting...
+2025-03-07 11:11:58.670 [main] INFO  com.zaxxer.hikari.pool.HikariPool - AIKGHikariCP - Added connection com.mysql.cj.jdbc.ConnectionImpl@762f8ff6
+2025-03-07 11:11:58.671 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Start completed.
+2025-03-07 11:11:58.696 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-07 11:11:58.696 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-07 11:11:59.057 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 11:11:59.087 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 11:11:59.485 [main] INFO  com.know.aikg.service.GenerateService - 初始化订阅定时任务...
+2025-03-07 11:11:59.485 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询所有有效订阅
+2025-03-07 11:11:59.566 [main] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个有效订阅
+2025-03-07 11:11:59.570 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: f07597e8faff11ef88541093b0b78881 创建定时任务，cron表达式: 0 20 18 * * ?
+2025-03-07 11:11:59.570 [main] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: f07599b4faff11ef88541093b0b78881 创建定时任务，cron表达式: 0 00 20 * * ?
+2025-03-07 11:11:59.570 [main] INFO  com.know.aikg.service.GenerateService - 成功初始化 2 个订阅定时任务
+2025-03-07 11:11:59.617 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 64c906ca-45ab-406f-a0d9-be45d0ee496d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-07 11:11:59.667 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-03-07 11:11:59.777 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-07 11:11:59.804 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ea3f905, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@757bbd02, org.springframework.security.web.context.SecurityContextHolderFilter@18a66406, org.springframework.security.web.header.HeaderWriterFilter@271df4c0, org.springframework.web.filter.CorsFilter@194feb27, org.springframework.security.web.authentication.logout.LogoutFilter@71443983, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72187492, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f8ede54, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@316745d8, org.springframework.security.web.access.ExceptionTranslationFilter@26a0068a, org.springframework.security.web.access.intercept.AuthorizationFilter@d4e17ec]
+2025-03-07 11:12:00.035 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2025-03-07 11:12:00.043 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 80 (http) with context path ''
+2025-03-07 11:12:00.060 [main] INFO  com.know.aikg.AikgApplication - Started AikgApplication in 3.095 seconds (process running for 3.262)
+2025-03-07 11:12:00.086 [main] INFO  com.know.aikg.AikgApplication - AIKG 应用程序已成功启动
+2025-03-07 11:12:05.021 [http-nio-80-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 11:12:05.022 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-07 11:12:05.024 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-03-07 11:12:41.914 [main] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-07 11:12:41.920 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 11:12:41.933 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-07 11:12:41.949 [main] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.
+2025-03-07 11:12:56.497 [SpringApplicationShutdownHook] WARN  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Timed out while waiting for executor 'taskScheduler' to terminate
+2025-03-07 11:12:56.501 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 11:12:56.514 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown initiated...
+2025-03-07 11:12:56.527 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - AIKGHikariCP - Shutdown completed.
+2025-03-07 11:13:12.426 [http-nio-80-exec-9] INFO  com.know.aikg.controller.SubscriptionController - 尝试发送测试邮件，领域: 自动驾驶技术，读者: 普通人，邮箱: xinlongzhan@webank.com
+2025-03-07 11:13:12.426 [Thread-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741317192426, 领域: 自动驾驶技术, 读者: 普通人, 邮箱: xinlongzhan@webank.com
+2025-03-07 11:13:12.426 [Thread-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-07 11:13:12.426 [Thread-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 293 字符, 用户提示词长度: 142 字符
+2025-03-07 11:13:16.125 [http-nio-80-exec-1] INFO  com.know.aikg.controller.SubscriptionController - 创建新订阅: com.know.aikg.entity.SubscriptionRole@1a1cbeb7
+2025-03-07 11:13:16.136 [http-nio-80-exec-1] INFO  com.know.aikg.service.SubscriptionRoleService - 创建新订阅: com.know.aikg.entity.SubscriptionRole@1a1cbeb7
+2025-03-07 11:13:16.153 [http-nio-80-exec-1] DEBUG com.know.aikg.service.SubscriptionRoleService - 订阅创建成功，ID: de0aa0ee-b395-4cd5-8277-753afd0a8326
+2025-03-07 11:13:16.155 [http-nio-80-exec-1] INFO  com.know.aikg.service.GenerateService - 接收到订阅变更事件: ID=de0aa0ee-b395-4cd5-8277-753afd0a8326, 类型=CREATED
+2025-03-07 11:13:16.155 [http-nio-80-exec-1] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: de0aa0ee-b395-4cd5-8277-753afd0a8326 创建定时任务，cron表达式: 0 15 11 * * ?
+2025-03-07 11:13:16.186 [http-nio-80-exec-1] INFO  com.know.aikg.controller.SubscriptionController - 订阅创建成功，ID: de0aa0ee-b395-4cd5-8277-753afd0a8326
+2025-03-07 11:13:20.277 [http-nio-80-exec-4] INFO  com.know.aikg.controller.SubscriptionController - 查询邮箱为 xinlongzhan@webank.com 的订阅列表
+2025-03-07 11:13:20.278 [http-nio-80-exec-4] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询邮箱为 xinlongzhan@webank.com 的订阅
+2025-03-07 11:13:20.287 [http-nio-80-exec-4] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 4 个订阅
+2025-03-07 11:13:27.828 [Thread-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 15402 毫秒
+2025-03-07 11:13:27.829 [Thread-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 362 字符
+2025-03-07 11:13:27.832 [Thread-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741317192426, 耗时: 15406ms, 生成标题数: 20
+2025-03-07 11:13:27.832 [Thread-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741317192426, 选中标题: 自动驾驶汽车如何应对复杂的城市交通？
+2025-03-07 11:13:27.833 [Thread-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-07 11:13:27.833 [Thread-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 337 字符, 用户提示词长度: 176 字符
+2025-03-07 11:13:35.591 [http-nio-80-exec-5] INFO  com.know.aikg.controller.SubscriptionController - 查询订阅详情，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:35.591 [http-nio-80-exec-5] DEBUG com.know.aikg.service.SubscriptionRoleService - 通过ID查询订阅: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:35.605 [http-nio-80-exec-5] INFO  com.know.aikg.controller.SubscriptionController - 查询订阅成功，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:35.614 [http-nio-80-exec-10] INFO  com.know.aikg.controller.SubscriptionController - 更新订阅，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:35.615 [http-nio-80-exec-10] INFO  com.know.aikg.service.SubscriptionRoleService - 更新订阅，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:35.618 [http-nio-80-exec-10] DEBUG com.know.aikg.service.SubscriptionRoleService - 订阅更新成功，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:35.618 [http-nio-80-exec-10] INFO  com.know.aikg.service.GenerateService - 接收到订阅变更事件: ID=f07588c0faff11ef88541093b0b78881, 类型=UPDATED
+2025-03-07 11:13:35.618 [http-nio-80-exec-10] INFO  com.know.aikg.service.GenerateService - 已为订阅 ID: f07588c0faff11ef88541093b0b78881 创建定时任务，cron表达式: 0 00 08 * * ?
+2025-03-07 11:13:35.653 [http-nio-80-exec-10] INFO  com.know.aikg.controller.SubscriptionController - 订阅更新成功，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:39.789 [http-nio-80-exec-6] INFO  com.know.aikg.controller.SubscriptionController - 删除订阅，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:39.791 [http-nio-80-exec-6] INFO  com.know.aikg.service.SubscriptionRoleService - 删除订阅，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:39.800 [http-nio-80-exec-6] DEBUG com.know.aikg.service.SubscriptionRoleService - 订阅删除成功，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:39.801 [http-nio-80-exec-6] INFO  com.know.aikg.service.GenerateService - 接收到订阅变更事件: ID=f07588c0faff11ef88541093b0b78881, 类型=DELETED
+2025-03-07 11:13:39.802 [http-nio-80-exec-6] INFO  com.know.aikg.service.GenerateService - 已取消订阅 ID: f07588c0faff11ef88541093b0b78881 的定时任务
+2025-03-07 11:13:39.807 [http-nio-80-exec-6] INFO  com.know.aikg.controller.SubscriptionController - 订阅删除成功，ID: f07588c0faff11ef88541093b0b78881
+2025-03-07 11:13:44.533 [http-nio-80-exec-9] INFO  com.know.aikg.controller.SubscriptionController - 查询邮箱为 xinlongzhan@webank.com 的订阅列表
+2025-03-07 11:13:44.534 [http-nio-80-exec-9] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询邮箱为 xinlongzhan@webank.com 的订阅
+2025-03-07 11:13:44.541 [http-nio-80-exec-9] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 3 个订阅
+2025-03-07 11:13:45.110 [http-nio-80-exec-1] INFO  com.know.aikg.controller.SubscriptionController - 查询邮箱为 xinlongzhan@webank.com 的订阅列表
+2025-03-07 11:13:45.111 [http-nio-80-exec-1] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询邮箱为 xinlongzhan@webank.com 的订阅
+2025-03-07 11:13:45.117 [http-nio-80-exec-1] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 3 个订阅
+2025-03-07 11:13:50.275 [http-nio-80-exec-4] INFO  com.know.aikg.controller.SubscriptionController - 删除订阅，ID: f07597e8faff11ef88541093b0b78881
+2025-03-07 11:13:50.276 [http-nio-80-exec-4] INFO  com.know.aikg.service.SubscriptionRoleService - 删除订阅，ID: f07597e8faff11ef88541093b0b78881
+2025-03-07 11:13:50.282 [http-nio-80-exec-4] DEBUG com.know.aikg.service.SubscriptionRoleService - 订阅删除成功，ID: f07597e8faff11ef88541093b0b78881
+2025-03-07 11:13:50.283 [http-nio-80-exec-4] INFO  com.know.aikg.service.GenerateService - 接收到订阅变更事件: ID=f07597e8faff11ef88541093b0b78881, 类型=DELETED
+2025-03-07 11:13:50.283 [http-nio-80-exec-4] INFO  com.know.aikg.service.GenerateService - 已取消订阅 ID: f07597e8faff11ef88541093b0b78881 的定时任务
+2025-03-07 11:13:50.288 [http-nio-80-exec-4] INFO  com.know.aikg.controller.SubscriptionController - 订阅删除成功，ID: f07597e8faff11ef88541093b0b78881
+2025-03-07 11:13:52.398 [http-nio-80-exec-5] INFO  com.know.aikg.controller.SubscriptionController - 查询邮箱为 xinlongzhan@webank.com 的订阅列表
+2025-03-07 11:13:52.398 [http-nio-80-exec-5] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询邮箱为 xinlongzhan@webank.com 的订阅
+2025-03-07 11:13:52.404 [http-nio-80-exec-5] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个订阅
+2025-03-07 11:13:52.814 [http-nio-80-exec-10] INFO  com.know.aikg.controller.SubscriptionController - 查询邮箱为 xinlongzhan@webank.com 的订阅列表
+2025-03-07 11:13:52.814 [http-nio-80-exec-10] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询邮箱为 xinlongzhan@webank.com 的订阅
+2025-03-07 11:13:52.819 [http-nio-80-exec-10] DEBUG com.know.aikg.service.SubscriptionRoleService - 查询到 2 个订阅
+2025-03-07 11:14:00.801 [Thread-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 32968 毫秒
+2025-03-07 11:14:00.801 [Thread-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 1046 字符
+2025-03-07 11:14:00.802 [Thread-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 1046 字符
+2025-03-07 11:14:00.804 [Thread-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 1031 字符
+2025-03-07 11:14:00.804 [Thread-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741317192426, 耗时: 32972ms, 长度: 1031 字符
+2025-03-07 11:14:00.804 [Thread-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: AIKG-自动驾驶汽车如何应对复杂的城市交通？
+2025-03-07 11:14:00.805 [Thread-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 1031 字符
+2025-03-07 11:14:04.926 [Thread-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-07 11:14:04.927 [Thread-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741317192426, 总耗时: 52500ms, 邮件发送耗时: 4123ms, 主题: AIKG-自动驾驶汽车如何应对复杂的城市交通？, 接收者: xinlongzhan@webank.com
+2025-03-07 11:14:04.927 [Thread-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741317192426, 标题生成: 15406ms, 内容生成: 32972ms, 邮件发送: 4123ms, 总计: 52500ms
+2025-03-07 11:14:04.927 [Thread-1] INFO  com.know.aikg.controller.SubscriptionController - 测试邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-07 11:15:00.018 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [任务开始] ID: task-1741317300002-de0aa0ee-b395-4cd5-8277-753afd0a8326, 时间: 2025-03-07 11:15:00, 订阅ID: de0aa0ee-b395-4cd5-8277-753afd0a8326, 领域: 自动驾驶技术, 读者: 普通人
+2025-03-07 11:15:00.019 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [邮件生成开始] ID: op-1741317300019, 领域: 自动驾驶技术, 读者: 普通人, 邮箱: xinlongzhan@webank.com
+2025-03-07 11:15:00.020 [scheduled-task-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-07 11:15:00.021 [scheduled-task-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 293 字符, 用户提示词长度: 142 字符
+2025-03-07 11:15:20.584 [scheduled-task-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 20563 毫秒
+2025-03-07 11:15:20.584 [scheduled-task-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 349 字符
+2025-03-07 11:15:20.585 [scheduled-task-1] DEBUG com.know.aikg.service.GenerateService - [标题生成] ID: op-1741317300019, 耗时: 20565ms, 生成标题数: 20
+2025-03-07 11:15:20.585 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [选择标题] ID: op-1741317300019, 选中标题: 自动驾驶技术如何影响汽车保险行业？
+2025-03-07 11:15:20.585 [scheduled-task-1] INFO  com.know.aikg.service.AIService - 开始使用模板调用AI模型生成内容
+2025-03-07 11:15:20.586 [scheduled-task-1] DEBUG com.know.aikg.service.AIService - 系统提示词模板长度: 337 字符, 用户提示词长度: 175 字符
+2025-03-07 11:15:48.972 [scheduled-task-1] INFO  com.know.aikg.service.AIService - AI模型模板调用成功，耗时: 28386 毫秒
+2025-03-07 11:15:48.973 [scheduled-task-1] DEBUG com.know.aikg.service.AIService - AI响应内容长度: 928 字符
+2025-03-07 11:15:48.973 [scheduled-task-1] DEBUG com.know.aikg.service.GenerateService - 开始将Markdown转换为纯文本，输入长度: 928 字符
+2025-03-07 11:15:48.974 [scheduled-task-1] DEBUG com.know.aikg.service.GenerateService - Markdown转换完成，输出长度: 913 字符
+2025-03-07 11:15:48.974 [scheduled-task-1] DEBUG com.know.aikg.service.GenerateService - [内容生成] ID: op-1741317300019, 耗时: 28389ms, 长度: 913 字符
+2025-03-07 11:15:48.975 [scheduled-task-1] INFO  com.know.aikg.service.EmailService - 准备发送邮件，接收者: xinlongzhan@webank.com, 主题: AIKG-自动驾驶技术如何影响汽车保险行业？
+2025-03-07 11:15:48.975 [scheduled-task-1] DEBUG com.know.aikg.service.EmailService - 邮件内容长度: 913 字符
+2025-03-07 11:15:52.649 [scheduled-task-1] INFO  com.know.aikg.service.EmailService - 邮件发送成功，接收者: xinlongzhan@webank.com
+2025-03-07 11:15:52.649 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [邮件发送完成] ID: op-1741317300019, 总耗时: 52629ms, 邮件发送耗时: 3674ms, 主题: AIKG-自动驾驶技术如何影响汽车保险行业？, 接收者: xinlongzhan@webank.com
+2025-03-07 11:15:52.649 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [性能指标] ID: op-1741317300019, 标题生成: 20565ms, 内容生成: 28389ms, 邮件发送: 3674ms, 总计: 52629ms
+2025-03-07 11:15:52.650 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [处理成功] ID: task-1741317300002-de0aa0ee-b395-4cd5-8277-753afd0a8326, 订阅ID: de0aa0ee-b395-4cd5-8277-753afd0a8326, 领域: 自动驾驶技术, 读者: 普通人
+2025-03-07 11:15:52.650 [scheduled-task-1] INFO  com.know.aikg.service.GenerateService - [任务完成] ID: task-1741317300002-de0aa0ee-b395-4cd5-8277-753afd0a8326, 耗时: 52秒
