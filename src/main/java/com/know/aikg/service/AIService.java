@@ -74,35 +74,58 @@ public class AIService {
         logger.info("开始调用AI模型生成内容");
         logger.debug("AI查询提示词长度: {} 字符", question.length());
         
-        try {
-            // 记录调用开始时间
-            long startTime = System.currentTimeMillis();
-            
-            // 创建消息列表
-            List<Message> messages = new ArrayList<>();
-            messages.add(new SystemMessage(SYSTEM_PROMPT + "\n当前时间戳: " + System.currentTimeMillis() + "\n非常重要：请以纯文本格式回复，不要使用任何Markdown格式。")); // 添加时间戳增加随机性
-            messages.add(new UserMessage(question));
-            
-            // 创建提示词
-            Prompt prompt = new Prompt(messages);
-            
-            // 调用AI模型
-            ChatResponse response = chatClient.call(prompt);
-            String content = response.getResult().getOutput().getContent();
-            
-            // 记录调用结束时间
-            long endTime = System.currentTimeMillis();
-            
-            // 记录调用成功信息和性能指标
-            logger.info("AI模型调用成功，耗时: {} 毫秒", (endTime - startTime));
-            logger.debug("AI响应内容长度: {} 字符", content.length());
-            
-            return content;
-        } catch (Exception e) {
-            // 记录调用失败信息
-            logger.error("AI模型调用失败，错误: {}", e.getMessage(), e);
-            throw e;
+        int retryCount = 0;
+        int maxRetries = 3;
+        long retryDelayMs = 2000;
+        Exception lastException = null;
+        
+        while (retryCount < maxRetries) {
+            try {
+                // 记录调用开始时间
+                long startTime = System.currentTimeMillis();
+                
+                // 创建消息列表
+                List<Message> messages = new ArrayList<>();
+                messages.add(new SystemMessage(SYSTEM_PROMPT + "\n当前时间戳: " + System.currentTimeMillis() + "\n非常重要：请以纯文本格式回复，不要使用任何Markdown格式。")); // 添加时间戳增加随机性
+                messages.add(new UserMessage(question));
+                
+                // 创建提示词
+                Prompt prompt = new Prompt(messages);
+                
+                // 调用AI模型
+                ChatResponse response = chatClient.call(prompt);
+                String content = response.getResult().getOutput().getContent();
+                
+                // 记录调用结束时间
+                long endTime = System.currentTimeMillis();
+                
+                // 记录调用成功信息和性能指标
+                logger.info("AI模型调用成功，耗时: {} 毫秒", (endTime - startTime));
+                logger.debug("AI响应内容长度: {} 字符", content.length());
+                
+                return content;
+            } catch (Exception e) {
+                // 记录调用失败信息
+                lastException = e;
+                logger.warn("AI模型调用失败 (尝试 {}/{}), 错误: {}", retryCount + 1, maxRetries, e.getMessage());
+                
+                retryCount++;
+                if (retryCount < maxRetries) {
+                    try {
+                        logger.info("等待 {} 毫秒后重试...", retryDelayMs);
+                        Thread.sleep(retryDelayMs);
+                        retryDelayMs *= 2; // 指数退避
+                    } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                        throw new RuntimeException("AI调用被中断", ie);
+                    }
+                }
+            }
         }
+        
+        // 所有重试都失败
+        logger.error("AI模型调用失败，已达到最大重试次数 ({})", maxRetries, lastException);
+        throw new RuntimeException("AI模型调用失败，已达到最大重试次数: " + lastException.getMessage(), lastException);
     }
     
     /**
