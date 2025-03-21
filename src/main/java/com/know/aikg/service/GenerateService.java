@@ -15,7 +15,6 @@ import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -84,15 +83,6 @@ public class GenerateService {
     @Value("${aikg.schedule.daily-email}")
     private String dailyEmailCron;
 
-    /**
-     * 每日任务执行统计数据
-     */
-    // 成功处理的订阅数量
-    private AtomicInteger dailySuccessCount = new AtomicInteger(0);
-    // 处理失败的订阅数量
-    private AtomicInteger dailyFailureCount = new AtomicInteger(0);
-    // 总处理的订阅数量
-    private AtomicInteger totalProcessedCount = new AtomicInteger(0);
 
     // 存储每个订阅的定时任务
     private Map<String, ScheduledFuture<?>> scheduledTasks = new HashMap<>();
@@ -329,6 +319,17 @@ public class GenerateService {
             "4. 原创且有深度\n" +
             "5. 彼此之间风格多样，避免重复的句式结构\n" +
             "6. 使用多样化的表达方式，如疑问句、陈述句、感叹句等\n" +
+            "7. 包含以下类型：\n" +
+            "   - 问题型（如：为什么...？如何...？）\n" +
+            "   - 数字型（如：5个...技巧，3种...方法）\n" +
+            "   - 对比型（如：...vs...，...与...的区别）\n" +
+            "   - 故事型（如：一个...的故事，...的传奇）\n" +
+            "   - 观点型（如：...的真相，...的误区）\n" +
+            "   - 趋势型（如：...的未来，...的发展）\n" +
+            "   - 实用型（如：...指南，...手册）\n" +
+            "8. 使用生动的动词和形容词\n" +
+            "9. 适当使用修辞手法（如比喻、拟人等）\n" +
+            "10. 确保每个标题都能激发读者的好奇心和求知欲\n" +
             "请直接返回标题列表，每行一个标题，不要有编号或其他解释文字。\n" +
             "非常重要：确保每次生成的标题都与之前完全不同，避免使用固定模板或相似结构。";
             
@@ -399,25 +400,34 @@ public class GenerateService {
      */
     private String generateContentPrompt(String area, String reader, String title) {
         // 创建一个随机数，用于选择不同的写作风格和结构
-        int styleVariant = new java.util.Random().nextInt(5);
+        int styleVariant = new java.util.Random().nextInt(8);
         String styleGuidance;
         
         // 根据随机数选择不同的写作风格指导
         switch (styleVariant) {
             case 0:
-                styleGuidance = "采用学术论文风格，包含引言、方法、结果和讨论部分，注重逻辑性和严谨性。";
+                styleGuidance = "采用学术论文风格，包含引言、方法、结果和讨论部分，注重逻辑性和严谨性。深入分析问题的本质，提供详实的论据支持。";
                 break;
             case 1:
-                styleGuidance = "采用故事叙述风格，通过生动的案例和比喻来解释复杂概念，增强可读性。";
+                styleGuidance = "采用故事叙述风格，通过生动的案例和比喻来解释复杂概念，增强可读性。用引人入胜的叙事方式展开内容，让读者身临其境。";
                 break;
             case 2:
-                styleGuidance = "采用问答形式，预设读者可能的问题并提供深入解答，增强互动性。";
+                styleGuidance = "采用问答形式，预设读者可能的问题并提供深入解答，增强互动性。通过层层递进的问题，引导读者深入思考。";
                 break;
             case 3:
-                styleGuidance = "采用观点评析风格，提出一个核心论点并从多角度进行分析，展示思考深度。";
+                styleGuidance = "采用观点评析风格，提出一个核心论点并从多角度进行分析，展示思考深度。对比不同观点，提供独到见解。";
+                break;
+            case 4:
+                styleGuidance = "采用实用指南风格，提供具体的步骤、方法和建议，注重实用性。包含详细的实施步骤和注意事项。";
+                break;
+            case 5:
+                styleGuidance = "采用对话访谈风格，模拟与领域专家的对话，展示专业见解。通过问答形式深入探讨专业话题。";
+                break;
+            case 6:
+                styleGuidance = "采用案例分析风格，通过具体案例深入分析，提供实践指导。结合理论知识和实践经验。";
                 break;
             default:
-                styleGuidance = "采用实用指南风格，提供具体的步骤、方法和建议，注重实用性。";
+                styleGuidance = "采用趋势展望风格，分析当前现状并展望未来发展方向。结合历史数据和未来预测。";
                 break;
         }
         
@@ -431,6 +441,48 @@ public class GenerateService {
             "非常重要：每次生成的内容必须是独特的、原创的，与之前生成的内容有明显区别。\n" +
             "请使用多样化的表达方式、结构和观点，避免套用固定模板。\n" +
             "尝试从不同角度思考问题，提供新颖的见解和独特的表述。\n" +
+            "文章要求：\n" +
+            "1. 内容长度：文章总字数不少于2000字\n" +
+            "2. 结构要求：\n" +
+            "   - 引言：概述主题，提出问题或观点\n" +
+            "   - 主体：分为3-5个主要部分，每部分300-500字\n" +
+            "   - 结论：总结要点，展望未来\n" +
+            "   - 扩展阅读：提供3-5篇相关文章的标题和链接\n" +
+            "3. 内容深度：\n" +
+            "   - 深入分析问题的本质和根源\n" +
+            "   - 提供详实的论据和数据支持\n" +
+            "   - 探讨问题的多个维度和层面\n" +
+            "   - 分析问题的因果关系\n" +
+            "4. 内容广度：\n" +
+            "   - 联系相关领域和知识\n" +
+            "   - 对比不同观点和方法\n" +
+            "   - 提供多个解决方案\n" +
+            "   - 考虑不同场景和应用\n" +
+            "5. 写作技巧：\n" +
+            "   - 使用生动的比喻和类比\n" +
+            "   - 加入具体的例子和场景\n" +
+            "   - 适当使用修辞手法\n" +
+            "   - 设置悬念和引导\n" +
+            "   - 增加互动性的提问\n" +
+            "   - 使用数据和事实支撑\n" +
+            "   - 提供实用的建议和解决方案\n" +
+            "   - 注意段落间的过渡和连接\n" +
+            "6. 思考元素：\n" +
+            "   - 提出深入的问题供读者思考\n" +
+            "   - 分析问题的多个角度\n" +
+            "   - 探讨可能的解决方案\n" +
+            "   - 讨论未来的发展趋势\n" +
+            "7. 互动元素：\n" +
+            "   - 设置思考问题\n" +
+            "   - 提供实践建议\n" +
+            "   - 鼓励读者参与讨论\n" +
+            "   - 分享个人经验\n" +
+            "8. 扩展阅读要求：\n" +
+            "   - 在文章末尾添加\"扩展阅读\"部分\n" +
+            "   - 提供3-5篇相关文章的标题和链接\n" +
+            "   - 每篇文章都应该与当前主题相关但角度不同\n" +
+            "   - 链接应该指向权威网站或专业平台\n" +
+            "   - 简要说明每篇文章的价值和特点\n" +
             styleGuidance + "\n" +
             "在文章末尾，请注明此文章是由AI生成，读者需自行辨别风险。";
             
@@ -444,7 +496,20 @@ public class GenerateService {
             "2. 内容要通俗易懂，适合目标读者阅读\n" +
             "3. 内容应该与领域和标题紧密相关\n" +
             "4. 请确保这篇文章与你之前生成的任何内容都不相同\n" +
-            "5. 当前时间戳：%d",
+            "5. 增加文章的趣味性和互动性\n" +
+            "6. 使用生动的语言和具体的例子\n" +
+            "7. 提供实用的建议和解决方案\n" +
+            "8. 文章总字数不少于2000字\n" +
+            "9. 深入分析问题的本质和根源\n" +
+            "10. 提供详实的论据和数据支持\n" +
+            "11. 探讨问题的多个维度和层面\n" +
+            "12. 分析问题的因果关系\n" +
+            "13. 联系相关领域和知识\n" +
+            "14. 对比不同观点和方法\n" +
+            "15. 提供多个解决方案\n" +
+            "16. 考虑不同场景和应用\n" +
+            "17. 在文章末尾添加扩展阅读部分，提供3-5篇相关文章的标题和链接\n" +
+            "18. 当前时间戳：%d",
             area, reader, title, System.currentTimeMillis()
         );
         
