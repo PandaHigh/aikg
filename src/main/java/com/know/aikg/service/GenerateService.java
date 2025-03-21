@@ -258,7 +258,7 @@ public class GenerateService {
                 operationId, area, reader, readerEmail);
         
         try {
-            // 第一步：生成20个文章标题
+            // 第一步：生成60个文章标题
             long titleStartTime = System.currentTimeMillis();
             List<String> titles = generateArticleTitles(area, reader);
             long titleEndTime = System.currentTimeMillis();
@@ -311,7 +311,7 @@ public class GenerateService {
     /**
      * 生成文章标题列表
      * 
-     * 根据领域和读者信息，使用AI生成20个适合的文章标题
+     * 根据领域和读者信息，使用AI生成60个适合的文章标题
      * 
      * @param area 领域
      * @param reader 读者
@@ -322,7 +322,7 @@ public class GenerateService {
             "你是一个专业的内容创作者，擅长为特定领域和目标读者创作吸引人的标题。\n" +
             "请以纯文本格式回复，不要使用Markdown或其他格式。\n" +
             "在生成标题前，请先深入思考该领域的核心概念和目标读者的兴趣点。\n" +
-            "你需要生成20个主题完全不同的标题，每个标题应该：\n" +
+            "你需要生成60个主题完全不同的标题，每个标题应该：\n" +
             "1. 吸引人且围绕一个具体知识点\n" +
             "2. 与领域和目标读者高度相关\n" +
             "3. 不具有时效性\n" +
@@ -333,7 +333,7 @@ public class GenerateService {
             "非常重要：确保每次生成的标题都与之前完全不同，避免使用固定模板或相似结构。";
             
         String userPrompt = String.format(
-            "请为以下领域和目标读者生成20个高质量的文章标题：\n" +
+            "请为以下领域和目标读者生成60个高质量的文章标题：\n" +
             "领域：%s\n" +
             "目标读者：%s\n\n" +
             "请确保标题多样化，包含不同类型（如'如何'类、列表类、问题类、观点类等），每个标题的主题互不相同，标题主题要围绕具体某个知识点" +
@@ -369,7 +369,7 @@ public class GenerateService {
                 .filter(line -> !line.isEmpty())
                 .filter(line -> !line.matches("^\\d+\\..*")) // 过滤掉可能的编号（如"1. 标题"）
                 .map(line -> line.replaceAll("^[\\-\\*]\\s+", "")) // 移除可能的列表符号（如"- 标题"）
-                .limit(20) // 确保最多返回20个标题
+                .limit(60) // 确保最多返回60个标题
                 .collect(Collectors.toList());
     }
 

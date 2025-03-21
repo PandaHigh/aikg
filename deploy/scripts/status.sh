@@ -29,7 +29,7 @@ fi
 PROCESS_INFO=$(ps -p "$PID" -o pid,ppid,user,%cpu,%mem,vsz,rss,stat,start,time,command | tail -n 1)
 
 # 检查应用健康状态
-HEALTH_CHECK_URL="http://localhost:8080/actuator/health"
+HEALTH_CHECK_URL="http://localhost:80/actuator/health"
 HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_CHECK_URL" 2>/dev/null)
 
 if [ "$HTTP_STATUS" == "200" ]; then
